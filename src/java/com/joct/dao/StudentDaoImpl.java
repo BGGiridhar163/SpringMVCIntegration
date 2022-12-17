@@ -1,5 +1,7 @@
 package com.joct.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -25,6 +27,14 @@ public class StudentDaoImpl implements StudentDao{
 		Transaction tx = se.beginTransaction();
 		se.save(stu);
 		tx.commit();
+	}
+
+
+	public List<Student> getStudents() {
+		// TODO Auto-generated method stub
+		Session se = sf.openSession();
+		List<Student> slist =se.createQuery("from Student").list();
+		return slist;
 	}
 
 }
