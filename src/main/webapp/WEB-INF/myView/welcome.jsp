@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h2 align="center">${mess}</h2>
-	<a href="student">Student Form</a>
+	<a href="student">Student Form</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="getStudentDetails">List Students</a>
 </body>
 </html>
