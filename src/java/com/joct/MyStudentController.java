@@ -2,6 +2,7 @@ package com.joct;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,6 +48,12 @@ public class MyStudentController {
 		st.setDob(req.getParameter("dob"));
 		service.saveStudent(st);
 		return new ModelAndView("student","st","OMG...Saved Student Information Successfully..!");
+	}
+	
+	@RequestMapping(value="/getStudentDetails", method=RequestMethod.GET)
+	public ModelAndView getStudents() {
+		List<Student> stlist = service.getStudents();
+		return new ModelAndView("MyStudentsList","sls",stlist);
 	}
 
 }
